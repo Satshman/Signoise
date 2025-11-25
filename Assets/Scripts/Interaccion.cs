@@ -11,7 +11,7 @@ public class Interaccion : MonoBehaviour
     {
         if (jugadorCerca)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 

@@ -22,6 +22,6 @@ public class CambioEscena0 : MonoBehaviour
 
     public void CargarProximaEscena()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
