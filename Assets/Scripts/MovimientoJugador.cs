@@ -12,6 +12,10 @@ public class MovimientoJugador : MonoBehaviour
     void Start()
     {
         jugadorRb = GetComponent<Rigidbody2D>();
+        if (PersistentGameData.Instance.lastPlayerPosition != Vector3.zero)
+        {
+            transform.position = PersistentGameData.Instance.lastPlayerPosition;
+        }
     }
 
     void Update()

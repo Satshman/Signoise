@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0e42098dea5c643a32d9c0666292f3, type: 3}
+  m_Name: Pato
+  m_EditorClassIdentifier: 
+  <Image>k__BackingField: {fileID: 425161212, guid: c40644c63011c2c41b19116d09c82357, type: 3}
+  <Health>k__BackingField: 100
+  <Deck>k__BackingField:
+  - {fileID: 11400000, guid: 43ac50389d705854aaa1dbd9bc24c71f, type: 2}
+  - {fileID: 11400000, guid: bb9d89fba7f0b584f9ff2e2e97beb9b0, type: 2}
+  - {fileID: 11400000, guid: b7519f9f62a030a4681582ac15346ecd, type: 2}
+  - {fileID: 11400000, guid: ca7dfff7ce932cf4499fee1a0b46812a, type: 2}
+  - {fileID: 11400000, guid: 7bc444df63e958040a75d45979cc8546, type: 2}
+  - {fileID: 11400000, guid: 610a69e7865fe3243a4d102c155b40dc, type: 2}
+  - {fileID: 11400000, guid: 43ac50389d705854aaa1dbd9bc24c71f, type: 2}
+  - {fileID: 11400000, guid: bb9d89fba7f0b584f9ff2e2e97beb9b0, type: 2}
+  - {fileID: 11400000, guid: b7519f9f62a030a4681582ac15346ecd, type: 2}
+  - {fileID: 11400000, guid: ca7dfff7ce932cf4499fee1a0b46812a, type: 2}
+  - {fileID: 11400000, guid: 7bc444df63e958040a75d45979cc8546, type: 2}
+  - {fileID: 11400000, guid: 610a69e7865fe3243a4d102c155b40dc, type: 2}

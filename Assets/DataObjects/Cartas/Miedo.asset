@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755d1f342ce026448ad8e62db327051b, type: 3}
+  m_Name: Miedo
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Miedo
+  <Mana>k__BackingField: 1
+  <Image>k__BackingField: {fileID: 21300000, guid: 1200e1b3af8bd324d8e8176934f8c116, type: 3}
+  <ManualTargetEffect>k__BackingField:
+    rid: -2
+  <OtherEffects>k__BackingField:
+  - <TargetMode>k__BackingField:
+      rid: 539690193104928788
+    <Effect>k__BackingField:
+      rid: 539690193104928786
+  <HoverFrames>k__BackingField:
+  - {fileID: 21300000, guid: 1200e1b3af8bd324d8e8176934f8c116, type: 3}
+  - {fileID: 21300000, guid: ca75604fe4194a348b4ea5a809a1308c, type: 3}
+  <HoverFrameRate>k__BackingField: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 539690193104928786
+      type: {class: DealDamageCardEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damageAmount: 1
+    - rid: 539690193104928788
+      type: {class: RandomEnemyTM, ns: , asm: Assembly-CSharp}
+      data: 

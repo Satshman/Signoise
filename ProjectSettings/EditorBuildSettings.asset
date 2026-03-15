@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Enfrentamiento.unity
     guid: fdf1aedb606a21446a3043fdaca2b971
+  - enabled: 1
+    path: Assets/Scenes/Combate.unity
+    guid: e8bb5a31cb3c88e43bc676ff0c8746f3
   m_configObjects: {}
