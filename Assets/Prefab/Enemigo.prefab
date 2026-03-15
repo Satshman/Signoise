@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 978440104000237679}
   spriteRenderer: {fileID: 1078318477376411127}
+  highlightRenderer: {fileID: 0}
   attackText: {fileID: 6728660473243765932}
 --- !u!65 &103404267756530719
 BoxCollider:

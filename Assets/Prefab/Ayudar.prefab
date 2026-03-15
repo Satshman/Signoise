@@ -371,7 +371,7 @@ MonoBehaviour:
   backGround: {fileID: 1437362837592729618}
   dropLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 32
 --- !u!210 &8073278395351499063
 SortingGroup:
   m_ObjectHideFlags: 0

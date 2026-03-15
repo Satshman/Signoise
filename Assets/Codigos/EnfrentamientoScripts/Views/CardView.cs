@@ -100,6 +100,15 @@ public class CardView : MonoBehaviour
         if (!Interactions.Instance.PlayerCanInteract()) return;
 
         Interactions.Instance.PlayerIsDragging = true;
+        foreach (var effect in Card.OtherEffects)
+        {
+            if (effect != null)
+            {
+                Debug.Log("Aplicando highlight con TargetMode");
+
+                TargetHighlightSystem.Instance.HighlightTargets(effect.TargetMode);
+            }
+        }
 
         backGround.SetActive(true);
         CardViewHoverSystem.Instance.Hide();
@@ -122,17 +131,15 @@ public class CardView : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (Camera.main == null) return;            // ← PROTECCIÓN
+        if (Camera.main == null) return;
         if (!Interactions.Instance.PlayerCanInteract()) return;
 
-        // RAYCAST SEGURO
-        bool validDrop = Physics.Raycast(
-            transform.position,
-            Vector3.forward,
-            out RaycastHit hit,
-            10f,
-            dropLayer
-        );
+        // Creamos un rayo desde el mouse hacia el mundo
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        bool validDrop = Physics.Raycast(ray,out RaycastHit hit,100f,dropLayer);
+
+        //bool validDrop = Physics.Raycast(ray, out RaycastHit hit, 100f);
 
         if (ManaSystem.Instance.HasEnoughMana(Card.Mana) && validDrop)
         {
@@ -144,6 +151,9 @@ public class CardView : MonoBehaviour
             transform.position = dragStartPosition;
             transform.rotation = dragStartRotation;
         }
+
+        // Quitamos el highlight de enemigos
+        TargetHighlightSystem.Instance.ClearTargets();
 
         Interactions.Instance.PlayerIsDragging = false;
     }
