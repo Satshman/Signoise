@@ -19,7 +19,7 @@ MonoBehaviour:
     rid: -2
   <OtherEffects>k__BackingField:
   - <TargetMode>k__BackingField:
-      rid: 539690193104928789
+      rid: 8203366478548566017
     <Effect>k__BackingField:
       rid: 539690193104928790
   <HoverFrames>k__BackingField:
@@ -31,10 +31,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 539690193104928789
-      type: {class: AllEnemiesTM, ns: , asm: Assembly-CSharp}
-      data: 
     - rid: 539690193104928790
       type: {class: DealDamageCardEffect, ns: , asm: Assembly-CSharp}
       data:
         damageAmount: 100
+    - rid: 8203366478548566017
+      type: {class: RightAndMiddleEnemyTM, ns: , asm: Assembly-CSharp}
+      data: 
