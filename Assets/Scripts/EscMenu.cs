@@ -8,7 +8,7 @@ public class EscMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class EscMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             CargarProximaEscena();
-        }        
+        }
     }
 
     public void CargarProximaEscena()
@@ -25,4 +25,3 @@ public class EscMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 }
-
