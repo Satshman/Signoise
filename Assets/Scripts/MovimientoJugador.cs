@@ -20,7 +20,12 @@ public class MovimientoJugador : MonoBehaviour
 
     void Update()
     {
-        //Inputs
+        if (!GameManager.Instance.puedeMoverse)
+        {
+            entradasMovimiento = Vector2.zero;
+            return;
+        }
+
         float moverX = Input.GetAxisRaw("Horizontal");
         float moverY = Input.GetAxisRaw("Vertical");
         entradasMovimiento = new Vector2(moverX, moverY).normalized;

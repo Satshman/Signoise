@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Satiago
   m_EditorClassIdentifier: 
   <Image>k__BackingField: {fileID: 272303247, guid: c3d793436e55ae44696f59f4922263e7, type: 3}
-  <Healt>k__BackingField: 2
-  <AttackPower>k__BackingField: 1
+  <Healt>k__BackingField: 20
+  <AttackPower>k__BackingField: 2

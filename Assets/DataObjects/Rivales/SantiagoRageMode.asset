@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b1a974ff61fa248bc3a9f6e984d391, type: 3}
   m_Name: SantiagoRageMode
   m_EditorClassIdentifier: 
-  <Image>k__BackingField: {fileID: 21300000, guid: dddc364846eaf0343b3dd0d133402128, type: 3}
-  <Healt>k__BackingField: 40
-  <AttackPower>k__BackingField: 0
+  <Image>k__BackingField: {fileID: 272303247, guid: c3d793436e55ae44696f59f4922263e7, type: 3}
+  <Healt>k__BackingField: 20
+  <AttackPower>k__BackingField: 2

@@ -21,7 +21,7 @@ MonoBehaviour:
   - <TargetMode>k__BackingField:
       rid: 8203366478548566018
     <Effect>k__BackingField:
-      rid: 8203366478983987200
+      rid: 8203366540502630400
   <HoverFrames>k__BackingField:
   - {fileID: 21300000, guid: af853352681e5524c852e6a11411be8a, type: 3}
   - {fileID: 21300000, guid: 359c29c16f52084479990d2c8299a9bc, type: 3}
@@ -34,8 +34,7 @@ MonoBehaviour:
     - rid: 8203366478548566018
       type: {class: AllEnemiesTM, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 8203366478983987200
-      type: {class: PoisonEffect, ns: , asm: Assembly-CSharp}
+    - rid: 8203366540502630400
+      type: {class: DealDamageCardEffect, ns: , asm: Assembly-CSharp}
       data:
-        damage: 0
-        turns: 0
+        damageAmount: 2

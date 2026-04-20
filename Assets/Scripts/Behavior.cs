@@ -4,10 +4,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public Vector3 playerPosition;
+    public bool puedeMoverse = true;
 
-    void Awake()
+    private void Awake()
     {
+        // Singleton
         if (Instance == null)
         {
             Instance = this;
