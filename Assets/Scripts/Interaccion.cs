@@ -1,7 +1,5 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public enum TipoInteraccion
 {
@@ -9,32 +7,33 @@ public enum TipoInteraccion
     Enemigo,
     Objeto
 }
+
 public class Interaccion : MonoBehaviour
 {
     private bool jugadorCerca = false;
+    private bool didDialogueStart = false;
 
-    [Header("UI")]
-    [SerializeField] private GameObject dialogueMark;   // icono encima (E)
-    [SerializeField] private GameObject dialoguePanel;  // panel del diálogo
-    [SerializeField] private TMP_Text dialogueText;
-
+    [Header("Tipo de interacción")]
+    [SerializeField] private TipoInteraccion tipo;
 
     [Header("Dialogo")]
-    [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
-    private bool didDialogueStart;
-    private int lineIndex;
-    private float typing = 0.05f;
-    private bool isTyping;
+    [SerializeField] private LineaDialogo[] dialogueLines;
 
-    [Header("Combate (opcional)")]
-    [SerializeField] private TipoInteraccion tipo;
+    [Header("Retratos (se envían al UI central)")]
+    [SerializeField] private Sprite spriteIzquierda;
+    [SerializeField] private Sprite spriteDerecha;
+
+    [Header("UI Indicador")]
+    [SerializeField] private GameObject dialogueMark;
+
+    [Header("Combate (si es enemigo)")]
     [SerializeField] private string enemyID;
     [SerializeField] private string combateScene = "Enfrentamiento";
 
     private void Start()
     {
-        dialoguePanel.SetActive(false);
-        dialogueMark.SetActive(false);
+        if (dialogueMark != null)
+            dialogueMark.SetActive(false);
     }
 
     private void Update()
@@ -52,55 +51,36 @@ public class Interaccion : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (isTyping)
-            {
-                StopAllCoroutines();
-                dialogueText.text = dialogueLines[lineIndex];
-                isTyping = false;
-            }
-            else
-            {
-                NextDialogueLine();
-            }
         }
     }
 
     private void StartDialogue()
     {
         didDialogueStart = true;
-        dialoguePanel.SetActive(true);
-        dialogueMark.SetActive(false); // ocultar icono mientras habla
-        lineIndex = 0;
-        GameManager.Instance.puedeMoverse = false;
-        StartCoroutine(ShowLine());
+
+        if (dialogueMark != null)
+            dialogueMark.SetActive(false);
+
+
+        DialogoUI.Instance.IniciarDialogo(
+            dialogueLines,
+            spriteIzquierda,
+            spriteDerecha,
+            OnDialogoTerminado
+        );
     }
 
-    private void NextDialogueLine()
-    {
-        lineIndex++;
-
-        if (lineIndex < dialogueLines.Length)
-        {
-            StartCoroutine(ShowLine());
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
-
-    private void EndDialogue()
+    private void OnDialogoTerminado()
     {
         didDialogueStart = false;
 
-        dialoguePanel.SetActive(false);
-        dialogueMark.SetActive(true);
-
-        GameManager.Instance.puedeMoverse = true;
+        if (dialogueMark != null && tipo == TipoInteraccion.NPC)
+            dialogueMark.SetActive(true);
 
         switch (tipo)
         {
             case TipoInteraccion.NPC:
+                // Solo diálogo
                 break;
 
             case TipoInteraccion.Enemigo:
@@ -112,8 +92,6 @@ public class Interaccion : MonoBehaviour
                 break;
         }
     }
-
-
 
     private void CombateChange()
     {
@@ -128,33 +106,14 @@ public class Interaccion : MonoBehaviour
         SceneManager.LoadScene(combateScene);
     }
 
-    private IEnumerator ShowLine()
-    {
-        isTyping = true;
-        dialogueText.text = "";
-
-        foreach (char ch in dialogueLines[lineIndex])
-        {
-            dialogueText.text += ch;
-            yield return new WaitForSeconds(typing);
-        }
-
-        isTyping = false;
-
-   
-        if (tipo == TipoInteraccion.Enemigo || tipo == TipoInteraccion.Objeto)
-        {
-            yield return new WaitForSeconds(1f); // tiempo de lectura
-            NextDialogueLine();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             jugadorCerca = true;
-            dialogueMark.SetActive(true);
+
+            if (dialogueMark != null && tipo == TipoInteraccion.NPC)
+                dialogueMark.SetActive(true);
         }
     }
 
@@ -163,7 +122,9 @@ public class Interaccion : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             jugadorCerca = false;
-            dialogueMark.SetActive(false);
+
+            if (dialogueMark != null)
+                dialogueMark.SetActive(false);
         }
     }
 }
