@@ -115,4 +115,27 @@ public class DialogoUI : MonoBehaviour
 
         onFinish?.Invoke();
     }
+
+    //Nuevo
+    public void MostrarMensaje(string mensaje, float duracion = 2f)
+    {
+        StopAllCoroutines();
+        StartCoroutine(MostrarMensajeCoroutine(mensaje, duracion));
+    }
+
+    private IEnumerator MostrarMensajeCoroutine(string mensaje, float duracion)
+    {
+        panel.SetActive(true);
+        texto.text = mensaje;
+
+        izquierda.gameObject.SetActive(false);
+        derecha.gameObject.SetActive(false);
+
+        GameManager.Instance.puedeMoverse = false;
+
+        yield return new WaitForSeconds(duracion);
+
+        panel.SetActive(false);
+        GameManager.Instance.puedeMoverse = true;
+    }
 }

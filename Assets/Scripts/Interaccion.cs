@@ -25,13 +25,26 @@ public class Interaccion : MonoBehaviour
 
     [Header("UI Indicador")]
     [SerializeField] private GameObject dialogueMark;
+    [SerializeField] private string uniqueID;
 
     [Header("Combate (si es enemigo)")]
     [SerializeField] private string enemyID;
     [SerializeField] private string combateScene = "Enfrentamiento";
 
+    [Header("Recompensas")]
+    [SerializeField] private string itemID; 
+
     private void Start()
     {
+        if (tipo == TipoInteraccion.Objeto)
+        {
+            if (PersistentGameData.Instance.cinematicsDone.Contains(uniqueID))
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+
         if (dialogueMark != null)
             dialogueMark.SetActive(false);
     }
@@ -74,13 +87,15 @@ public class Interaccion : MonoBehaviour
     {
         didDialogueStart = false;
 
-        if (dialogueMark != null && tipo == TipoInteraccion.NPC)
-            dialogueMark.SetActive(true);
+        if (!string.IsNullOrEmpty(itemID) &&
+        !PersistentGameData.Instance.HasItem(itemID))
+        {
+            PersistentGameData.Instance.AddItem(itemID);
+        }
 
         switch (tipo)
         {
             case TipoInteraccion.NPC:
-                // Solo diálogo
                 break;
 
             case TipoInteraccion.Enemigo:
@@ -88,6 +103,12 @@ public class Interaccion : MonoBehaviour
                 break;
 
             case TipoInteraccion.Objeto:
+
+                if (!string.IsNullOrEmpty(uniqueID))
+                {
+                    PersistentGameData.Instance.cinematicsDone.Add(uniqueID);
+                }
+
                 Destroy(gameObject);
                 break;
         }
