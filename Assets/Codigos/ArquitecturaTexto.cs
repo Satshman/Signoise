@@ -12,7 +12,7 @@ public class ArquitecturaTexto
     public string textoActual => tmpro.text;
     public string targetTexto { get; private set; } = "";
     public string preTexto { get; private set; } = "";
-    private int preTextoTamaño = 0;
+    private int preTextoTamano = 0;
     public string targetCompletoTexto => preTexto + targetTexto;
 
     public enum MetodoConstruir {instant,typewriter,fade}
@@ -145,11 +145,11 @@ public class ArquitecturaTexto
         if (preTexto != "")
         {
             tmpro.ForceMeshUpdate();
-            preTextoTamaño = tmpro.textInfo.characterCount;
+            preTextoTamano = tmpro.textInfo.characterCount;
         }
         else
         {
-            preTextoTamaño = 0;
+            preTextoTamano = 0;
         }
         tmpro.text += targetTexto;
         tmpro.maxVisibleCharacters=int.MaxValue;
@@ -166,7 +166,7 @@ public class ArquitecturaTexto
             TMP_CharacterInfo caracterInformacion = textoInformacion.characterInfo[i];
             if (!caracterInformacion.isVisible)
                 continue;
-            if (i<preTextoTamaño)
+            if (i<preTextoTamano)
             {
                 for (int v=0;v<4;v++)
                 {
@@ -196,7 +196,7 @@ public class ArquitecturaTexto
 
     private IEnumerator Construir_fade()
     {
-        int minRango = preTextoTamaño;
+        int minRango = preTextoTamano;
         int maxRango = minRango + 1;
 
         byte alphaThreshold = 15;

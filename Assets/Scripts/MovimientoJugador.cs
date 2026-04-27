@@ -9,6 +9,8 @@ public class MovimientoJugador : MonoBehaviour
     private Rigidbody2D jugadorRb;
     private Vector2 entradasMovimiento;
 
+    private SpriteRenderer spriteRd;
+
     void Start()
     {
         jugadorRb = GetComponent<Rigidbody2D>();
@@ -16,6 +18,7 @@ public class MovimientoJugador : MonoBehaviour
         {
             transform.position = PersistentGameData.Instance.lastPlayerPosition;
         }
+        spriteRd = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -29,6 +32,15 @@ public class MovimientoJugador : MonoBehaviour
         float moverX = Input.GetAxisRaw("Horizontal");
         float moverY = Input.GetAxisRaw("Vertical");
         entradasMovimiento = new Vector2(moverX, moverY).normalized;
+
+        if (moverX > 0)
+        {
+            spriteRd.flipX = false;
+        }
+        else if (moverX < 0)
+        {
+            spriteRd.flipX = true; 
+        }
     }
 
     private void FixedUpdate()
