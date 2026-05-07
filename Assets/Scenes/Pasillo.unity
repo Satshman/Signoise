@@ -1957,14 +1957,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 0
   dialogueLines:
-  - texto: Te veo Pingu
+  - texto: "\xA1Hey!"
     hablante: 1
-  - texto: Que pasa bro
+  - texto: "\xA1T\xFA!"
+    hablante: 1
+  - texto: "El que se cree ping\xFCino"
+    hablante: 1
+  - texto: "\xBFPuedes verme?"
+    hablante: 1
+  - texto: SI....
     hablante: 0
-  - texto: Ayudame!!!!
+  - texto: "Estoy atrapada aqu\xED desde\u2026 desde hace mucho."
     hablante: 1
-  - texto: Ella tiene la llave, ve y buscala
+  - texto: Necesito la llave de esta jaula
     hablante: 1
+  - texto: Prometo ayudarte si me liberas.
+    hablante: 1
+  - texto: Okey
+    hablante: 0
   spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
   spriteDerecha: {fileID: 1177138211, guid: 38b36240f9e27ac46a419e2c676765a4, type: 3}
   dialogueMark: {fileID: 579958518}
@@ -3791,12 +3801,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 1
   dialogueLines:
-  - texto: 
-    hablante: 0
-  - texto: 
-    hablante: 0
-  - texto: 
-    hablante: 0
+  - texto: "Ruido\u2026 ruido\u2026 ruido\u2026"
+    hablante: 1
+  - texto: Algo falta.
+    hablante: 1
   spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
   spriteDerecha: {fileID: 693078373, guid: 375246f391c85a248a2a272f4fd4f1fa, type: 3}
   dialogueMark: {fileID: 1199891589}
@@ -4163,14 +4171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 2
   dialogueLines:
-  - texto: Hola
+  - texto: "Las puertas aqu\xED no se abren."
     hablante: 0
-  - texto: Que cabron
-    hablante: 1
-  - texto: ZZzz
+  - texto: Solo recuerdan.
     hablante: 0
-  spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
-  spriteDerecha: {fileID: 21300000, guid: e8b7dd5ecfac6ac4cbb13822d0a00912, type: 3}
+  spriteIzquierda: {fileID: 0}
+  spriteDerecha: {fileID: 0}
   dialogueMark: {fileID: 1160321277}
   uniqueID: Cinematica_2
   enemyID: 
@@ -6123,10 +6129,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 1
   dialogueLines:
-  - texto: bdshfbhs
-    hablante: 0
-  - texto: sdfsdf
-    hablante: 0
+  - texto: "No tienes boca\u2026 pero tampoco la necesitas."
+    hablante: 1
+  - texto: Las manos hablan
+    hablante: 1
+  - texto: "Mu\xE9strame si recuerdas c\xF3mo hacerlo."
+    hablante: 1
   spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
   spriteDerecha: {fileID: -1831272717, guid: 375246f391c85a248a2a272f4fd4f1fa, type: 3}
   dialogueMark: {fileID: 310565653}
@@ -6680,14 +6688,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 2
   dialogueLines:
-  - texto: Hola world
-    hablante: 1
-  - texto: Que tal people
+  - texto: Odio este lugar
     hablante: 0
-  - texto: zzz
-    hablante: 0
-  spriteIzquierda: {fileID: 21300000, guid: cf9bf6fb22ac88846aec0a70c328531a, type: 3}
-  spriteDerecha: {fileID: 21300000, guid: 27a0db5956a74c34eb3ca67ae5aaadb0, type: 3}
+  spriteIzquierda: {fileID: 21300000, guid: 00ef75e6dcac9264480d5bdd81619ae6, type: 3}
+  spriteDerecha: {fileID: 0}
   dialogueMark: {fileID: 752890497}
   uniqueID: cinematica_1
   enemyID: 
