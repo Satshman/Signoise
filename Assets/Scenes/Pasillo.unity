@@ -10916,7 +10916,7 @@ GameObject:
   - component: {fileID: 2072772285}
   - component: {fileID: 2072772284}
   m_Layer: 0
-  m_Name: Habitacion (1)
+  m_Name: Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10996,10 +10996,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 2
   dialogueLines:
-  - texto: "Las puertas aqu\xED no se abren."
+  - texto: Hola pata
     hablante: 0
-  - texto: Solo recuerdan.
+  - texto: Ya estoy aqui
     hablante: 0
+  - texto: Gracias onichan
+    hablante: 1
   spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
   spriteDerecha: {fileID: 21300000, guid: 9fa9cec5a9e8b3b498894f1a37a264e6, type: 3}
   dialogueMark: {fileID: 0}
