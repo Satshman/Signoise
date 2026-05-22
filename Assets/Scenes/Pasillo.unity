@@ -10996,11 +10996,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 2
   dialogueLines:
-  - texto: Hola pata
+  - texto: Estaba muy asustada
+    hablante: 1
+  - texto: .....
     hablante: 0
-  - texto: Ya estoy aqui
-    hablante: 0
-  - texto: Gracias onichan
+  - texto: 'Gracias por venir por mi '
     hablante: 1
   spriteIzquierda: {fileID: 21300000, guid: 3543bc0f131a31041bb1276288fdb1d2, type: 3}
   spriteDerecha: {fileID: 21300000, guid: 9fa9cec5a9e8b3b498894f1a37a264e6, type: 3}
